@@ -9,16 +9,16 @@ var SIDI ={};
             this.mixers.forEach(mixer=>{
                 mixer.update(delta);
             });
-            if(this.markers[0].visible && this.markers[1].visible){
+            if(this.markers[2].visible && this.markers[4].visible){
                 //Get position in marker 1
                 let cur = new THREE.Vector3();
                 let des = new THREE.Vector3();
 
-                this.markers[0].getWorldPosition(cur);
-                this.markers[1].getWorldPosition(des);
+                this.markers[2].getWorldPosition(cur);
+                this.markers[4].getWorldPosition(des);
                 des.sub(cur);
 
-                this.characters[0].position.add(des.multiplyScalar(0.002));
+                this.characters[2].position.add(des.multiplyScalar(0.002));
 
 
             }
